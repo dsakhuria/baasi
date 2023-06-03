@@ -110,13 +110,15 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                     width="48"
                     height="48" 
                     className="rounded-full" 
-                    src={image || currentUser?.image || '/images/placeholder.jpg'}
+                    src={image || currentUser?.image || '/images/placeholder1.jpg'}
                     alt="Avatar"
+                    sizes="(max-width: 480px) 100px,
+                            (max-width: 768px) 200px, 300px"
                   />
                   <CldUploadButton 
                     options={{ maxFiles: 1 }} 
                     onUpload={handleUpload} 
-                    uploadPreset="pgc9ehd5"
+                    uploadPreset="nfpurdfd"
                   >
                     <Button 
                       disabled={isLoading}
