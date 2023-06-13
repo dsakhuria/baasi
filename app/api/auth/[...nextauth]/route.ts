@@ -6,6 +6,7 @@ import GoogleProvider from "next-auth/providers/google"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 
 import prisma from "@/app/libs/prismadb"
+import { toast } from "react-hot-toast"
 
 export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
@@ -46,6 +47,10 @@ export const authOptions: AuthOptions = {
 
         if (!isCorrectPassword) {
           throw new Error('Invalid Password');
+        }
+
+        if (credentials.password.length < 8) {
+          throw new Error("Password must be at least 8 characters.")  
         }
 
         return user;

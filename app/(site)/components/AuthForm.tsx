@@ -23,11 +23,12 @@ const AuthForm = () => {
   useEffect(() => {
     if (session?.status === 'authenticated') {
       router.push('/conversations')
+      toast.success("Logged in. (redirecting...)")
     }
   }, [session?.status, router]);
 
   const toggleVariant = useCallback(() => {
-    if (variant === 'LOGIN') {
+    if (variant === 'LOGIN') {    
       setVariant('REGISTER');
     } else {
       setVariant('LOGIN');
@@ -84,7 +85,6 @@ const AuthForm = () => {
 
         if (callback?.ok) {
           router.push('/conversations')
-          toast.success("Logged in. (redirecting...)")
         }
       })
       .finally(() => setIsLoading(false))
