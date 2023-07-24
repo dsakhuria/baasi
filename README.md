@@ -32,7 +32,7 @@ Open your preferred browser and visit http://localhost:3000
 Technologies Used
 
 
-- React.js
+- React /ts
 - Next.js
 - NextAuth
 - TypeScript
